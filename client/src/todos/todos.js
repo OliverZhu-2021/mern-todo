@@ -3,7 +3,7 @@ const api_base = 'http://localhost:3001';
 const Todos = ({ todos, setTodos }) => {
 
   const completeTodo = async id => {
-		console.log("Complete todo")
+		console.log("Complete todo");
 		const data = await fetch(api_base + '/todo/complete/' + id);
 		const dataJson = await data.json();
 		setTodos(todos => todos.map(todo => {
