@@ -10,6 +10,11 @@ const TodoSchema = new Schema({
 		type: Boolean,
 		default: false
 	},
+	status: {
+		type: String,
+		enum: ['active', 'completed', 'deleted'],
+		default: 'active'
+	},
 	timestamp: {
 		type: String,
 		default: Date.now()
