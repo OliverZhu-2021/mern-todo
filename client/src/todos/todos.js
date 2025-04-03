@@ -24,22 +24,22 @@ const Todos = ({ todos, setTodos }) => {
 
   return(
     <div className="todos">
-				{todos.length > 0 ? todos.map(todo => (
-					<div className={
-						"todo" + (todo.complete ? " is-complete" : "")
-					} key={todo._id} >
-						<div 
-							onClick={() => completeTodo(todo._id)}
-							className='checkbox-text-container'
-						>
-							<div className="checkbox"></div>
-							<div className="text">{todo.text}</div>
-						</div>
-						<div className="delete-todo" onClick={() => deleteTodo(todo._id)}>x</div>
+			{todos.length > 0 ? todos.map(todo => (
+				<div className={
+					"todo" + (todo.complete ? " is-complete" : "")
+				} key={todo._id} >
+					<div 
+						onClick={() => completeTodo(todo._id)}
+						className='checkbox-text-container'
+					>
+						<div className="checkbox"></div>
+						<div className="text">{todo.text}</div>
 					</div>
-				)) : (
-					<p>You currently have no tasks</p>
-				)}
+					<div className="delete-todo" onClick={() => deleteTodo(todo._id)}>x</div>
+				</div>
+			)) : (
+				<p>You currently have no tasks</p>
+			)}
 		</div>
   )
 };
