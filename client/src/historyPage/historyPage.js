@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 const api_base = 'http://localhost:3001';
 
 const HistoryPage = () => {
@@ -18,6 +19,16 @@ const HistoryPage = () => {
 
   return(
     <div className="history-main">
+      <div className="header">
+        <h1>Welcome, Hao</h1>
+        <Link 
+          className="to-home-btn"
+          to="/"
+        >
+          Home
+        </Link>
+      </div>
+      <h4>Your tasks history</h4>
       <div className="todos">
         {history.length > 0 ? history.map(history => (
           <div className={"todo"} key={history._id} >

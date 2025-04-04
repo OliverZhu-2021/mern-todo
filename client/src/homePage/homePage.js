@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Todos from "../todos/todos";
 import CreateModal from "../modal/createModal";
+import { Link } from "react-router-dom";
 const api_base = 'http://localhost:3001';
 
 const HomePage = () => {
@@ -22,7 +23,15 @@ const HomePage = () => {
 
   return(
     <div className="App">
-			<h1>Welcome, Hao</h1>
+      <div className="header">
+        <h1>Welcome, Hao</h1>
+        <Link 
+          className="to-history-btn"
+          to="/history"
+        >
+          History
+        </Link>
+      </div>
 			<h4>Your tasks</h4>
 			<Todos todos={todos} setTodos={setTodos} />
 
